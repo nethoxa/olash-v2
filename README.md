@@ -1,9 +1,3 @@
-# OLASH-V2: Gerstner Waves with Per-Vertex Lighting
-
-Real-time water surface simulation combining GPU-driven Gerstner wave displacement with a three-component per-vertex lighting model, rendered with OpenGL 4.0.
-
-## Gerstner Wave Model
-
 The vertex shader displaces mesh vertices according to the Gerstner (trochoidal) wave model, where water particles trace circular orbits producing sharp crests and broad troughs. For a vertex at position **P** with normalized wave direction **D** projected onto the XZ plane:
 
 ```
@@ -67,3 +61,7 @@ cmake ..
 make
 ./olash-v2
 ```
+
+### Demo
+
+https://github.com/user-attachments/assets/de2153ea-f411-43ed-9c10-a0c2873d1670
