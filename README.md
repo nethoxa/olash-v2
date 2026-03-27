@@ -1,20 +1,4 @@
-The vertex shader displaces mesh vertices according to the Gerstner (trochoidal) wave model, where water particles trace circular orbits producing sharp crests and broad troughs. For a vertex at position **P** with normalized wave direction **D** projected onto the XZ plane:
-
-```
-k       = 2 * pi / lambda                    wave number
-omega   = sqrt(g * k)                        angular frequency (dispersion relation)
-f       = k * (D . P) - omega * t            phase
-
-P'.x    = P.x + (Q / k) * D.x * cos(f)
-P'.y    = P.y + (Q / k) * sin(f)
-P'.z    = P.z + (Q / k) * D.z * cos(f)
-```
-
-Wave speed follows the deep-water dispersion relation `sqrt(g / k)` with g = 9.8 m/s^2 -- longer waves propagate faster, matching real ocean physics.
-
-## Lighting Model
-
-The surface normal at each displaced vertex is constructed analytically from the wave direction:
+Building on [olash-v1](https://github.com/nethoxa/olash-v1), this version adds a per-vertex lighting model computed in the vertex shader alongside the wave displacement. The surface normal at each displaced vertex is constructed analytically from the wave direction:
 
 ```
 T  = normalize(1 - D.x^2,  0,  -D.x)        tangent (perpendicular to wave direction in XZ)
