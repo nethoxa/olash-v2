@@ -1,3 +1,5 @@
+**NOTE**: this was wrote in 2023 during my second year at collegue, the new commits are updates to the README mostly to make it more *"pretty"* for ppl that does not know me (you)
+
 Building on [olash-v1](https://github.com/nethoxa/olash-v1), this version adds a per-vertex lighting model computed in the vertex shader alongside the wave displacement. The surface normal at each displaced vertex is constructed analytically from the wave direction:
 
 ```
